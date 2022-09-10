@@ -40,3 +40,65 @@ export const orderList = [
     totalOrder: 15,
   },
 ]
+
+export const orderPieList = [
+  {
+    date: 1,
+    totalOrder: 65,
+  },
+  {
+    date: 2,
+    totalOrder: 30,
+  },
+  {
+    date: 3,
+    totalOrder: 15,
+  },
+  {
+    date: 4,
+    totalOrder: 50,
+  },
+  {
+    date: 5,
+    totalOrder: 70,
+  },
+  {
+    date: 6,
+    totalOrder: 90,
+  },
+  {
+    date: 7,
+    totalOrder: 45,
+  },
+]
+
+export const orderLineList = [
+  {
+    date: 1,
+    totalOrder: 65,
+  },
+  {
+    date: 2,
+    totalOrder: 30,
+  },
+  {
+    date: 3,
+    totalOrder: 15,
+  },
+  {
+    date: 4,
+    totalOrder: 50,
+  },
+  {
+    date: 5,
+    totalOrder: 70,
+  },
+  {
+    date: 6,
+    totalOrder: 90,
+  },
+  {
+    date: 7,
+    totalOrder: 45,
+  },
+]

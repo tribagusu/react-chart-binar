@@ -1,16 +1,17 @@
-import { Bar } from "react-chartjs-2"
+import { useState, useEffect } from "react"
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  PointElement,
+  LineElement,
 } from "chart.js"
-import { orderList } from "../data"
-import { useState, useEffect } from "react"
+import { Line } from "react-chartjs-2"
+import { orderLineList } from "../data"
 
-ChartJS.register(CategoryScale, LinearScale, BarElement)
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement)
 
-const BarChart = () => {
+const LineChart = () => {
   const [dataChart, setDataChart] = useState({
     labels: [],
     datasets: [
@@ -24,18 +25,18 @@ const BarChart = () => {
 
   useEffect(() => {
     setDataChart({
-      labels: orderList.map((data) => data.date),
+      labels: orderLineList.map((data) => data.date),
       datasets: [
         {
           label: "data penjualan",
-          data: orderList.map((data) => data.totalOrder),
+          data: orderLineList.map((data) => data.totalOrder),
           backgroundColor: "#586B90",
         },
       ],
     })
   }, [])
 
-  return <Bar data={dataChart} />
+  return <Line data={dataChart} />
 }
 
-export default BarChart
+export default LineChart

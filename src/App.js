@@ -1,36 +1,24 @@
-import { useState, useEffect } from "react"
 import "./App.css"
 import BarChart from "./components/BarChart"
-import { orderList } from "./data"
+import LineChart from "./components/LineChart"
+import PieChart from "./components/PieChart"
 
 function App() {
-  const [chart, setChart] = useState({
-    labels: [],
-    datasets: [
-      {
-        label: "",
-        data: [],
-      },
-    ],
-  })
-
-  useEffect(() => {
-    setChart({
-      labels: orderList.map((data) => data.date),
-      datasets: [
-        {
-          label: "data penjualan",
-          data: orderList.map((data) => data.totalOrder),
-        },
-      ],
-    })
-  }, [])
-
-  // console.log(chart)
-
   return (
     <div className="App">
-      <BarChart chart={chart} />
+      <div style={{ width: "800px" }}>
+        <BarChart />
+      </div>
+      <br />
+      <br />
+      <div style={{ display: "flex", gap: "4rem" }}>
+        <div style={{ width: "400px" }}>
+          <PieChart />
+        </div>
+        <div style={{ width: "400px" }}>
+          <LineChart />
+        </div>
+      </div>
     </div>
   )
 }
